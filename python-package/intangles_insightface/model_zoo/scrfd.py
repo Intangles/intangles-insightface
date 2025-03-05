@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Organization  : insightface.ai
+# @Organization  : intangles_insightface.ai
 # @Author        : Jia Guo
 # @Time          : 2021-05-04
 # @Function      : 
@@ -302,7 +302,7 @@ class SCRFD:
 
         return keep
 
-def get_scrfd(name, download=False, root='~/.insightface/models', **kwargs):
+def get_scrfd(name, download=False, root='~/.intangles_insightface/models', **kwargs):
     if not download:
         assert os.path.exists(name)
         return SCRFD(name)

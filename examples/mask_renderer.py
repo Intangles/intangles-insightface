@@ -8,7 +8,7 @@ from insightface.data import get_image as ins_get_image
 
 
 if __name__ == "__main__":
-    #make sure that you have download correct insightface model pack.
+    #make sure that you have download correct intangles_insightface model pack.
     #make sure that BFM.mat and BFM_UV.mat have been generated
     tool = MaskRenderer()
     tool.prepare(ctx_id=0, det_size=(128,128))

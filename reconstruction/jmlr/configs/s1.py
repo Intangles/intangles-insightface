@@ -3,7 +3,7 @@ from easydict import EasyDict as edict
 config = edict()
 
 config.dataset = "wcpa"
-config.root_dir = '/data/insightface/wcpa'
+config.root_dir = '/data/intangles_insightface/wcpa'
 config.cache_dir = './cache_align'
 #config.num_classes = 617970
 #config.num_classes = 2000000

@@ -8,7 +8,7 @@ from insightface.data import get_image as ins_get_image
 
 assert insightface.__version__>='0.3'
 
-parser = argparse.ArgumentParser(description='insightface app test')
+parser = argparse.ArgumentParser(description='intangles_insightface app test')
 # general
 parser.add_argument('--ctx', default=0, type=int, help='ctx id, <0 means using cpu')
 parser.add_argument('--det-size', default=640, type=int, help='detection size')

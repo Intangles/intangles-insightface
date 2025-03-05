@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# @Organization  : insightface.ai
+# @Organization  : intangles_insightface.ai
 # @Author        : Jia Guo
-# @Time          : 2021-05-04
+# @Time          : 2021-06-19
 # @Function      : 
 
 from __future__ import division
@@ -10,15 +10,13 @@ import cv2
 import onnx
 import onnxruntime
 from ..utils import face_align
-from ..utils import transform
-from ..data import get_object
 
 __all__ = [
-    'Landmark',
+    'Attribute',
 ]
 
 
-class Landmark:
+class Attribute:
     def __init__(self, model_file=None, session=None):
         assert model_file is not None
         self.model_file = model_file
@@ -61,17 +59,11 @@ class Landmark:
         self.output_names = output_names
         assert len(self.output_names)==1
         output_shape = outputs[0].shape
-        self.require_pose = False
         #print('init output_shape:', output_shape)
-        if output_shape[1]==3309:
-            self.lmk_dim = 3
-            self.lmk_num = 68
-            self.mean_lmk = get_object('meanshape_68.pkl')
-            self.require_pose = True
+        if output_shape[1]==3:
+            self.taskname = 'genderage'
         else:
-            self.lmk_dim = 2
-            self.lmk_num = output_shape[1]//self.lmk_dim
-        self.taskname = 'landmark_%dd_%d'%(self.lmk_dim, self.lmk_num)
+            self.taskname = 'attribute_%d'%output_shape[1]
 
     def prepare(self, ctx_id, **kwargs):
         if ctx_id<0:
@@ -89,26 +81,14 @@ class Landmark:
         #assert input_size==self.input_size
         blob = cv2.dnn.blobFromImage(aimg, 1.0/self.input_std, input_size, (self.input_mean, self.input_mean, self.input_mean), swapRB=True)
         pred = self.session.run(self.output_names, {self.input_name : blob})[0][0]
-        if pred.shape[0] >= 3000:
-            pred = pred.reshape((-1, 3))
+        if self.taskname=='genderage':
+            assert len(pred)==3
+            gender = np.argmax(pred[:2])
+            age = int(np.round(pred[2]*100))
+            face['gender'] = gender
+            face['age'] = age
+            return gender, age
         else:
-            pred = pred.reshape((-1, 2))
-        if self.lmk_num < pred.shape[0]:
-            pred = pred[self.lmk_num*-1:,:]
-        pred[:, 0:2] += 1
-        pred[:, 0:2] *= (self.input_size[0] // 2)
-        if pred.shape[1] == 3:
-            pred[:, 2] *= (self.input_size[0] // 2)
-
-        IM = cv2.invertAffineTransform(M)
-        pred = face_align.trans_points(pred, IM)
-        face[self.taskname] = pred
-        if self.require_pose:
-            P = transform.estimate_affine_matrix_3d23d(self.mean_lmk, pred)
-            s, R, t = transform.P2sRt(P)
-            rx, ry, rz = transform.matrix2angle(R)
-            pose = np.array( [rx, ry, rz], dtype=np.float32 )
-            face['pose'] = pose #pitch, yaw, roll
-        return pred
+            return pred
 
 

@@ -158,7 +158,7 @@ def parse_arguments(argv):
                         type=str,
                         help='',
                         default='./data/megaface_noises.txt')
-    parser.add_argument('--algo', type=str, help='', default='insightface')
+    parser.add_argument('--algo', type=str, help='', default='intangles_insightface')
     parser.add_argument('--facescrub-lst',
                         type=str,
                         help='',
