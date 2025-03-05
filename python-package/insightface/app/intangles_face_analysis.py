@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# @Organization  : insightface.ai
-# @Author        : Jia Guo
-# @Time          : 2021-05-04
+# @Organization  : intangles.ai
+# @Author        : Satyam Saurav
+# @Time          : 2025-03-05
 # @Function      :
 
 
