@@ -17,6 +17,11 @@ Starting from insightface>=0.2, we use onnxruntime as inference backend.
 You have to install ``onnxruntime-gpu`` manually to enable GPU inference, or install ``onnxruntime`` to use CPU only inference.
 
 ## Change Log
+### [0.0.1] - 2025-03-05
+
+#### Changed
+- Renamed importable module to avoid conflicts with original repo
+
 ### [0.7.3.1] - 2025-03-03
 
 #### Changed
@@ -130,16 +135,16 @@ The latest insightface libary only supports onnx models. Once you have trained d
 ```
 import cv2
 import numpy as np
-import insightface
-from insightface.app import FaceAnalysis
-from insightface.data import get_image as ins_get_image
+import intangles_insightface
+from intangles_insightface.app import FaceAnalysis
+from intangles_insightface.data import get_image as ins_get_image
 
 # Method-1, use FaceAnalysis
 app = FaceAnalysis(allowed_modules=['detection']) # enable detection model only
 app.prepare(ctx_id=0, det_size=(640, 640))
 
 # Method-2, load model directly
-detector = insightface.model_zoo.get_model('your_detection_model.onnx')
+detector = intangles_insightface.model_zoo.get_model('your_detection_model.onnx')
 detector.prepare(ctx_id=0, input_size=(640, 640))
 
 ```
@@ -149,11 +154,11 @@ detector.prepare(ctx_id=0, input_size=(640, 640))
 ```
 import cv2
 import numpy as np
-import insightface
-from insightface.app import FaceAnalysis
-from insightface.data import get_image as ins_get_image
+import intangles_insightface
+from intangles_insightface.app import FaceAnalysis
+from intangles_insightface.data import get_image as ins_get_image
 
-handler = insightface.model_zoo.get_model('your_recognition_model.onnx')
+handler = intangles_insightface.model_zoo.get_model('your_recognition_model.onnx')
 handler.prepare(ctx_id=0)
 
 ```

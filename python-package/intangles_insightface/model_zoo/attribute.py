@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Organization  : intangles_insightface.ai
+# @Organization  : insightface.ai
 # @Author        : Jia Guo
 # @Time          : 2021-06-19
 # @Function      : 
