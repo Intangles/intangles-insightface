@@ -78,7 +78,6 @@ class IntanglesFaceAnalysis:
     def get(
             self,
             img,
-            op_type,
             max_num=0,
             det_metric='default',
             preprocess_colour=None,
@@ -96,8 +95,6 @@ class IntanglesFaceAnalysis:
         if bboxes.shape[0] == 0:
             return []
 
-        # fr_trigger => left
-        # onboarding => largest
         if dominant_face == 'left':
             # Initialize variables for finding dominant face
             dominant_ind, dominant_left = 10000, 10000
@@ -127,9 +124,6 @@ class IntanglesFaceAnalysis:
 
             bboxes = np.array([bboxes[dominant_ind]])
             kpss = np.array([kpss[dominant_ind]])
-
-        else:
-            raise Exception(f"Invalid op_type! type= {op_type}")
 
         ret = []
         for i in range(bboxes.shape[0]):
