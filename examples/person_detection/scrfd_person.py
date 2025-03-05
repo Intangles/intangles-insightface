@@ -4,9 +4,9 @@ import os
 import os.path as osp
 import glob
 import cv2
-import insightface
+import intangles_insightface
 
-assert insightface.__version__>='0.4'
+assert intangles_insightface.__version__>='0.1'
 
 
 def detect_person(img, detector):
@@ -24,7 +24,7 @@ def detect_person(img, detector):
 
 if __name__ == '__main__':
     import glob
-    detector = insightface.model_zoo.get_model('scrfd_person_2.5g.onnx', download=True)
+    detector = intangles_insightface.model_zoo.get_model('scrfd_person_2.5g.onnx', download=True)
     detector.prepare(0, nms_thresh=0.5, input_size=(640, 640))
     img_paths = glob.glob('data/images/*.jpg')
     for img_path in img_paths:

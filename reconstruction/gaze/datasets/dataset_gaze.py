@@ -6,8 +6,8 @@ import pickle
 import threading
 import logging
 import numpy as np
-import insightface
-from insightface.utils import face_align
+import intangles_insightface
+from intangles_insightface.utils import face_align
 import torch
 from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms

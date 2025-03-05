@@ -2,11 +2,11 @@ import argparse
 import cv2
 import sys
 import numpy as np
-import insightface
-from insightface.app import FaceAnalysis
-from insightface.data import get_image as ins_get_image
+import intangles_insightface
+from intangles_insightface.app import FaceAnalysis
+from intangles_insightface.data import get_image as ins_get_image
 
-assert insightface.__version__>='0.3'
+assert intangles_insightface.__version__>='0.1'
 
 parser = argparse.ArgumentParser(description='intangles_insightface app test')
 # general

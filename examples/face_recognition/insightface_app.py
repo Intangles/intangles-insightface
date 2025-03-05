@@ -1,7 +1,7 @@
 import cv2
-import insightface
+import intangles_insightface
 import numpy as np
-from insightface.app import FaceAnalysis
+from intangles_insightface.app import FaceAnalysis
 
 # Initialize face analysis model
 app = FaceAnalysis(name='buffalo_l', providers=['CPUExecutionProvider'])  # Use 'CUDAExecutionProvider' for GPU

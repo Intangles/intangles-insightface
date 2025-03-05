@@ -42,15 +42,15 @@ Please refer to `make_renderer.py` for detail example.
 
 (1) init renderer:
 ```
-import insightface
-from insightface.app import MaskRenderer
+import intangles_insightface
+from intangles_insightface.app import MaskRenderer
 tool = MaskRenderer()
 tool.prepare(ctx_id=0, det_size=(128,128)) #use gpu
 ```
 
 (2) load face and mask images
 ```
-from insightface.data import get_image as ins_get_image
+from intangles_insightface.data import get_image as ins_get_image
 image = ins_get_image('Tom_Hanks_54745')
 mask_image  = "mask_blue"
 ```

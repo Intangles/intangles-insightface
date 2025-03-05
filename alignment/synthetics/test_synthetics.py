@@ -7,9 +7,9 @@ import os
 import numpy as np
 import cv2
 import os.path as osp
-import insightface
-from insightface.app import FaceAnalysis
-from insightface.utils import face_align
+import intangles_insightface
+from intangles_insightface.app import FaceAnalysis
+from intangles_insightface.utils import face_align
 
 flip_parts = ([1, 17], [2, 16], [3, 15], [4, 14], [5, 13], [6, 12], [7, 11], [8, 10],
     [18, 27], [19, 26], [20, 25], [21, 24], [22, 23],

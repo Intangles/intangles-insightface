@@ -2,8 +2,8 @@ import os, sys, datetime
 import numpy as np
 import os.path as osp
 import cv2
-import insightface
-from insightface.app import MaskRenderer
+import intangles_insightface
+from intangles_insightface.app import MaskRenderer
 
 
 if __name__ == "__main__":
