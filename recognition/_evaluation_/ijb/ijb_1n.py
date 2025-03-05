@@ -228,7 +228,7 @@ if __name__ == "__main__":
     parser.add_argument('--gpu', default=7, type=int, help='gpu id')
     parser.add_argument('--batch-size', default=32, type=int, help='')
     parser.add_argument('--job',
-                        default='insightface',
+                        default='intangles_insightface',
                         type=str,
                         help='job name')
     parser.add_argument('--target',

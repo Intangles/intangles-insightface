@@ -15,7 +15,7 @@ def parse_arguement(argv):
     parser.add_argument(
         "--data_dir",
         type=str,
-        default="insightface/datasets/faces_emore",
+        default="intangles_insightface/datasets/faces_emore",
         help="Root directory to mxnet dataset.",
     )
     parser.add_argument(

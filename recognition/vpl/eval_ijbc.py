@@ -29,7 +29,7 @@ parser.add_argument('--image-path', default='', type=str, help='')
 parser.add_argument('--result-dir', default='.', type=str, help='')
 parser.add_argument('--batch-size', default=128, type=int, help='')
 parser.add_argument('--network', default='iresnet50', type=str, help='')
-parser.add_argument('--job', default='insightface', type=str, help='job name')
+parser.add_argument('--job', default='intangles_insightface', type=str, help='job name')
 parser.add_argument('--target', default='IJBC', type=str, help='target, set to IJBC or IJBB')
 args = parser.parse_args()
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# @Organization  : insightface.ai
-# @Author        : Jia Guo
+# @Organization  : intangles
+# @Author        : Jia Guo, Satyam Saurav
 # @Time          : 2021-05-04
 # @Function      : 
 
@@ -23,7 +23,7 @@ __all__ = ['FaceAnalysis']
 
 
 class FaceAnalysis:
-    def __init__(self, name=DEFAULT_MP_NAME, root='~/.insightface', allowed_modules=None, **kwargs):
+    def __init__(self, name=DEFAULT_MP_NAME, root='~/.intangles_insightface', allowed_modules=None, **kwargs):
         onnxruntime.set_default_logger_severity(3)
         self.models = {}
         self.model_dir = ensure_available('models', name, root=root)
@@ -78,7 +78,6 @@ class FaceAnalysis:
     def get(
             self,
             img,
-            op_type,
             max_num=0,
             det_metric='default',
             preprocess_colour=None,
@@ -89,9 +88,9 @@ class FaceAnalysis:
         if preprocess_colour and preprocess_colour == 'clahe':
             img = self.clahe_preprocess_colour(img)
 
-        bboxes, kpss = self.det_model.detect(img,
-                                             max_num=max_num,
-                                             metric=det_metric)
+        bboxes, kpss = self.det_model.detect(
+            img, max_num=max_num, metric=det_metric
+        )
 
         if bboxes.shape[0] == 0:
             return []
@@ -127,9 +126,6 @@ class FaceAnalysis:
 
             bboxes = np.array([bboxes[dominant_ind]])
             kpss = np.array([kpss[dominant_ind]])
-
-        else:
-            raise Exception(f"Invalid op_type! type= {op_type}")
 
         ret = []
         for i in range(bboxes.shape[0]):

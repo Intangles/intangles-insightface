@@ -31,7 +31,7 @@ parser.add_argument('--image-path', default='', type=str, help='')
 parser.add_argument('--result-dir', default='.', type=str, help='')
 parser.add_argument('--gpu', default='0', type=str, help='gpu id')
 parser.add_argument('--batch-size', default=128, type=int, help='')
-parser.add_argument('--job', default='insightface', type=str, help='job name')
+parser.add_argument('--job', default='intangles_insightface', type=str, help='job name')
 parser.add_argument('-es', '--emb-size', type=int, help='embedding size')
 parser.add_argument('--target',
                     default='IJBC',

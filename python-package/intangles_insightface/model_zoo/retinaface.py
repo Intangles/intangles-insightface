@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Organization  : insightface.ai
+# @Organization  : intangles_insightface.ai
 # @Author        : Jia Guo
 # @Time          : 2021-09-18
 # @Function      : 
@@ -289,7 +289,7 @@ class RetinaFace:
 
         return keep
 
-def get_retinaface(name, download=False, root='~/.insightface/models', **kwargs):
+def get_retinaface(name, download=False, root='~/.intangles_insightface/models', **kwargs):
     if not download:
         assert os.path.exists(name)
         return RetinaFace(name)

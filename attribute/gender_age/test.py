@@ -7,7 +7,7 @@ from insightface.app import FaceAnalysis
 from insightface.data import get_image as ins_get_image
 
 
-parser = argparse.ArgumentParser(description='insightface gender-age test')
+parser = argparse.ArgumentParser(description='intangles_insightface gender-age test')
 # general
 parser.add_argument('--ctx', default=0, type=int, help='ctx id, <0 means using cpu')
 args = parser.parse_args()
