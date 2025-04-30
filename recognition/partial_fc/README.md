@@ -87,7 +87,7 @@ the graphics driver version on the physical machine must be greater than 418.
 You can use dockerhub or offline docker.tar to get the image of the Partial-fc.
 1. dockerhub
 ```shell
-docker pull insightface/partial_fc:v1
+docker pull intangles_insightface/partial_fc:v1
 ```  
 
 2. offline images  
@@ -95,7 +95,7 @@ coming soon!
 
 ### 2. Getting Started
 ```shell
-sudo docker run -it -v /train_tmp:/train_tmp --net=host --privileged --gpus 8 --shm-size=1g insightface/partial_fc:v1 /bin/bash
+sudo docker run -it -v /train_tmp:/train_tmp --net=host --privileged --gpus 8 --shm-size=1g intangles_insightface/partial_fc:v1 /bin/bash
 ```
 
 `/train_tmp` is where you put your training set (if you have enough RAM memory, 

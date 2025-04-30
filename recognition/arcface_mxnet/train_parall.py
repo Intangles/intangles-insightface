@@ -1,5 +1,5 @@
 '''
-@author: insightface
+@author: intangles_insightface
 '''
 
 from __future__ import absolute_import

@@ -18,7 +18,7 @@ class ModelDownloadCommand(BaseInsightFaceCLICommand):
     def register_subcommand(parser: ArgumentParser):
         download_parser = parser.add_parser("model.download")
         download_parser.add_argument(
-            "--root", type=str, default='~/.insightface', help="Path to location to store the models"
+            "--root", type=str, default='~/.intangles_insightface', help="Path to location to store the models"
         )
         download_parser.add_argument(
             "--force", action="store_true", help="Force the model to be download even if already in root-dir"

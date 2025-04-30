@@ -170,7 +170,7 @@ def parse_arguments(argv):
     parser.add_argument('--batch_size', type=int, help='', default=8)
     parser.add_argument('--image_size', type=str, help='', default='3,112,112')
     parser.add_argument('--gpu', type=int, help='', default=0)
-    parser.add_argument('--algo', type=str, help='', default='insightface')
+    parser.add_argument('--algo', type=str, help='', default='intangles_insightface')
     parser.add_argument('--facescrub-lst',
                         type=str,
                         help='',

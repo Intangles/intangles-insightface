@@ -1,5 +1,5 @@
 '''
-@author: insightface
+@author: intangles_insightface
 '''
 
 import logging

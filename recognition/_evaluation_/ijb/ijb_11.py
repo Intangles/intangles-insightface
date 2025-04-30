@@ -31,7 +31,7 @@ parser.add_argument('--model-prefix', default='', help='path to load model.')
 parser.add_argument('--model-epoch', default=1, type=int, help='')
 parser.add_argument('--gpu', default=7, type=int, help='gpu id')
 parser.add_argument('--batch-size', default=32, type=int, help='')
-parser.add_argument('--job', default='insightface', type=str, help='job name')
+parser.add_argument('--job', default='intangles_insightface', type=str, help='job name')
 parser.add_argument('--target',
                     default='IJBC',
                     type=str,

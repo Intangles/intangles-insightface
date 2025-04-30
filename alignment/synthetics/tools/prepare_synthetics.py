@@ -7,9 +7,9 @@ import os
 import numpy as np
 import cv2
 import os.path as osp
-import insightface
-from insightface.app import FaceAnalysis
-from insightface.utils import face_align
+import intangles_insightface
+from intangles_insightface.app import FaceAnalysis
+from intangles_insightface.utils import face_align
 
 app = FaceAnalysis()
 app.prepare(ctx_id=0, det_size=(224, 224))

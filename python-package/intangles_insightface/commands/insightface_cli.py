@@ -6,8 +6,8 @@ from .model_download import ModelDownloadCommand
 from .rec_add_mask_param import RecAddMaskParamCommand
 
 def main():
-    parser = ArgumentParser("InsightFace CLI tool", usage="insightface-cli <command> [<args>]")
-    commands_parser = parser.add_subparsers(help="insightface-cli command-line helpers")
+    parser = ArgumentParser("InsightFace CLI tool", usage="intangles_insightface-cli <command> [<args>]")
+    commands_parser = parser.add_subparsers(help="intangles_insightface-cli command-line helpers")
 
     # Register commands
     ModelDownloadCommand.register_subcommand(commands_parser)

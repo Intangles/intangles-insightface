@@ -4,17 +4,17 @@ import os
 import os.path as osp
 import glob
 import cv2
-import insightface
-from insightface.app import FaceAnalysis
-from insightface.data import get_image as ins_get_image
+import intangles_insightface
+from intangles_insightface.app import FaceAnalysis
+from intangles_insightface.data import get_image as ins_get_image
 
 
-assert insightface.__version__>='0.7'
+assert intangles_insightface.__version__>='0.1'
 
 if __name__ == '__main__':
     app = FaceAnalysis(name='buffalo_l')
     app.prepare(ctx_id=0, det_size=(640, 640))
-    swapper = insightface.model_zoo.get_model('inswapper_128.onnx', download=True, download_zip=True)
+    swapper = intangles_insightface.model_zoo.get_model('inswapper_128.onnx', download=True, download_zip=True)
 
 
     img = ins_get_image('t1')

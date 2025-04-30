@@ -8,9 +8,9 @@ import os.path as osp
 import numpy as np
 import cv2
 import os.path as osp
-import insightface
-from insightface.app import FaceAnalysis
-from insightface.utils import face_align
+import intangles_insightface
+from intangles_insightface.app import FaceAnalysis
+from intangles_insightface.utils import face_align
 import menpo.io as mio
 from menpo.image import Image
 from menpo.shape import PointCloud, TriMesh

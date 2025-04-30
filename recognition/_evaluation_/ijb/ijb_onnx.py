@@ -11,8 +11,8 @@ import prettytable
 import skimage.transform
 from sklearn.metrics import roc_curve
 from sklearn.preprocessing import normalize
-import insightface
-from insightface.model_zoo import ArcFaceONNX
+import intangles_insightface
+from intangles_insightface.model_zoo import ArcFaceONNX
 
 
 SRC = np.array(

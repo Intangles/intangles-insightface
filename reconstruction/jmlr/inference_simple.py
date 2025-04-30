@@ -294,7 +294,7 @@ if __name__ == "__main__":
     app = FaceAnalysis(allowed_modules='detection')
     app.prepare(ctx_id=0, det_size=(640,640), det_thresh=0.5)
     index = -1
-    for img_path in glob.glob('/data/insightface/wcpa/image/222714/01_LeftToRight_Neutral/*.jpg'):
+    for img_path in glob.glob('/data/intangles_insightface/wcpa/image/222714/01_LeftToRight_Neutral/*.jpg'):
         index+=1
         img = cv2.imread(img_path)
         if index==0:

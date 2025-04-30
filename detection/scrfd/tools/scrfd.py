@@ -290,7 +290,7 @@ class SCRFD:
 
         return keep
 
-def get_scrfd(name, download=False, root='~/.insightface/models', **kwargs):
+def get_scrfd(name, download=False, root='~/.intangles_insightface/models', **kwargs):
     if not download:
         assert os.path.exists(name)
         return SCRFD(name)

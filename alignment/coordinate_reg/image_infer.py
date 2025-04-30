@@ -1,9 +1,9 @@
 import cv2
 import numpy as np
 import os
-import insightface
-from insightface.app import FaceAnalysis
-from insightface.data import get_image as ins_get_image
+import intangles_insightface
+from intangles_insightface.app import FaceAnalysis
+from intangles_insightface.data import get_image as ins_get_image
 
 if __name__ == '__main__':
     app = FaceAnalysis(allowed_modules=['detection', 'landmark_2d_106'])
